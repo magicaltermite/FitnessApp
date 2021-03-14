@@ -21,5 +21,6 @@
 
 ### Wont Have
   - Ressourcer til at finde det perfekte træningssystem 
+  - Evnen til at dele information med andre brugere
   
   
