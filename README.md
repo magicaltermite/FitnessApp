@@ -2,7 +2,10 @@
 
 ## Kort Beskrivelse af Idé:
 
-
+Idéen er at lave en app der gør det muligt for en person at holde styr på deres træningsprogram og deres kost og i sammenæng med det holde styr på deres fremskridt uge efter uge. 
+Dette gøres primært ved at have en måde for individet at indsætte deres træningsprogram, hvor mange gentagelser de tager i de individuelle øvelser, hvor meget vægt de bruger osv. 
+Udover det kan der også laves en mad plan, hvor der kan holdes styr på hvor mange kulhydrater, proteiner og ligende man indtager, for at sikre sig at ens kost er bedst til de mål man prøver at opnå. 
+Der vil også være en kalender, så man kan holde styr på hvornår man træner og alt dette ville idéelt blive brugt til at skave en oversigt i grafform over hvordan man har udviklet sig træningsmæssigt, f.eks. hvor meget vægt man har tabt, hvor meget mere man løfter eller ligende. 
 
 
 ## MoSCoW Prioritized Requirements:
