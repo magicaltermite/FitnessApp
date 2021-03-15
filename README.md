@@ -10,6 +10,8 @@ Udover det kan der også laves en mad plan, hvor der kan holdes styr på hvor ma
 
 Der vil også være en kalender, så man kan holde styr på hvornår man træner og alt dette ville idéelt blive brugt til at skave en oversigt i grafform over hvordan man har udviklet sig træningsmæssigt, f.eks. hvor meget vægt man har tabt, hvor meget mere man løfter eller ligende. 
 
+Den primære grund til at jeg valgte præcis denne idé, er at jeg personligt gerne vil begynde at træne og tænkte at lave en app centreret omkring kunne hjælpe med at gøre det. Udover det syntes jeg der er nogle interessante idéer vedrørende datavisualisering, som jeg gerne vil arbejde med.
+
 
 ## MoSCoW Prioritized Requirements:
 
