@@ -1,4 +1,4 @@
-package com.example.fitnessapp.models.wgerAPI;
+package com.example.fitnessapp.models.wgerAPI.exerciseInfo;
 
 import java.util.List;
 

@@ -1,10 +1,4 @@
-package com.example.fitnessapp.models.wgerAPI;
-
-import com.example.fitnessapp.models.wgerAPI.Equipment;
-import com.example.fitnessapp.models.wgerAPI.Language;
-import com.example.fitnessapp.models.wgerAPI.License;
-import com.example.fitnessapp.models.wgerAPI.Muscle;
-import com.example.fitnessapp.models.wgerAPI.MusclesSecondary;
+package com.example.fitnessapp.models.wgerAPI.exerciseInfo;
 
 import java.util.List;
 

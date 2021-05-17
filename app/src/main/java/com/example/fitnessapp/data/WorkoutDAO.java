@@ -6,8 +6,8 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.fitnessapp.models.wgerAPI.Result;
-import com.example.fitnessapp.models.wgerAPI.Root;
+import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
+import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Root;
 
 import java.util.List;
 
@@ -51,7 +51,7 @@ public class WorkoutDAO {
             @EverythingIsNonNull
             @Override
             public void onFailure(Call<Root> call, Throwable t) {
-                Log.i("Retrofit, WorkoutDAO", "Something went wrong: (");
+                Log.i("retrofit, WorkoutDAO", "Something went wrong: (");
             }
         });
 

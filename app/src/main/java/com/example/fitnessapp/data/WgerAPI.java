@@ -1,6 +1,6 @@
 package com.example.fitnessapp.data;
 
-import com.example.fitnessapp.models.wgerAPI.Root;
+import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Root;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

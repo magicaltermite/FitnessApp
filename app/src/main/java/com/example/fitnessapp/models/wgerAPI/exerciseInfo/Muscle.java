@@ -1,6 +1,6 @@
-package com.example.fitnessapp.models.wgerAPI;
+package com.example.fitnessapp.models.wgerAPI.exerciseInfo;
 
-public class MusclesSecondary {
+public class Muscle {
     public int id;
     public String name;
     public boolean is_front;
