@@ -24,4 +24,6 @@ public class Result {
     public List<Image> images;
     public List<Comment> comments;
     public List<Integer> variations;
+
+
 }

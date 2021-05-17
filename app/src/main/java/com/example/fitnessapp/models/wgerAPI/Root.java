@@ -7,4 +7,8 @@ public class Root {
     public String next;
     public Object previous;
     public List<Result> results;
+
+    public List<Result> getResult() {
+        return results;
+    }
 }
