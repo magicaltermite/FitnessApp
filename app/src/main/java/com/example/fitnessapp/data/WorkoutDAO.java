@@ -44,7 +44,7 @@ public class WorkoutDAO {
             @Override
             public void onResponse(Call<Root> call, Response<Root> response) {
                 if (response.code() == 200) {
-                    searchExercise.setValue(response.body().getResult());
+                    searchExercise.setValue(response.body().getResults());
                 }
             }
 

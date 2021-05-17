@@ -8,7 +8,7 @@ public class Root {
     public Object previous;
     public List<Result> results;
 
-    public List<Result> getResult() {
+    public List<Result> getResults() {
         return results;
     }
 }
