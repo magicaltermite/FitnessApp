@@ -21,7 +21,7 @@ public class WorkoutDAO {
     private static WorkoutDAO instance;
     private final MutableLiveData<List<Result>> searchExercise;
 
-    public WorkoutDAO() {
+    private WorkoutDAO() {
         searchExercise = new MutableLiveData<>();
     }
 
@@ -40,7 +40,7 @@ public class WorkoutDAO {
 
         Call<Root> call = wgerAPI.getExercise(name);
         call.enqueue(new Callback<Root>() {
-            @EverythingIsNonNull
+
             @Override
             public void onResponse(Call<Root> call, Response<Root> response) {
                 if (response.code() == 200) {
@@ -48,7 +48,6 @@ public class WorkoutDAO {
                 }
             }
 
-            @EverythingIsNonNull
             @Override
             public void onFailure(Call<Root> call, Throwable t) {
                 Log.i("retrofit, WorkoutDAO", "Something went wrong: (");
