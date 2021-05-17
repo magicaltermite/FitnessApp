@@ -11,4 +11,14 @@ public class Root {
     public List<Result> getResults() {
         return results;
     }
+
+    @Override
+    public String toString() {
+        return "Root{" +
+                "count=" + count +
+                ", next='" + next + '\'' +
+                ", previous=" + previous +
+                ", results=" + results +
+                '}';
+    }
 }
