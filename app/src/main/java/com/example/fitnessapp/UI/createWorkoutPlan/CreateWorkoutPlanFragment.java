@@ -1,12 +1,12 @@
 package com.example.fitnessapp.UI.createWorkoutPlan;
 
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +15,13 @@ import android.widget.TextView;
 
 import com.example.fitnessapp.R;
 
-public class createWorkoutPlanFragment extends Fragment {
+public class CreateWorkoutPlanFragment extends Fragment {
 
     private CreateWorkoutPlanViewModel mViewModel;
     private TextView textView;
 
-    public static createWorkoutPlanFragment newInstance() {
-        return new createWorkoutPlanFragment();
+    public static CreateWorkoutPlanFragment newInstance() {
+        return new CreateWorkoutPlanFragment();
     }
 
     @Override
