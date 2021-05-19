@@ -16,7 +16,7 @@ public class CreateWorkoutPlanViewModel extends ViewModel {
         workoutRepository = WorkoutRepository.getInstance();
     }
 
-    public LiveData<List<Result>> getExercise() {
+    public LiveData<List<Result>> getExerciseAsLiveData() {
         return workoutRepository.getExercise();
     }
 
