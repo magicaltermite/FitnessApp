@@ -1,4 +1,4 @@
-package com.example.fitnessapp.UI.createWorkoutPlan;
+package com.example.fitnessapp.UI.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
@@ -8,11 +8,11 @@ import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
 
 import java.util.List;
 
-public class CreateWorkoutPlanViewModel extends ViewModel {
+public class HomeViewModel extends ViewModel {
 
     private WorkoutRepository workoutRepository;
 
-    public CreateWorkoutPlanViewModel() {
+    public HomeViewModel() {
         workoutRepository = WorkoutRepository.getInstance();
     }
 

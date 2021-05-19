@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.view.Menu;
 
 
-import com.example.fitnessapp.UI.createWorkoutPlan.CreateWorkoutPlanFragment;
+import com.example.fitnessapp.UI.home.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.container, new CreateWorkoutPlanFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, new HomeFragment()).commit();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

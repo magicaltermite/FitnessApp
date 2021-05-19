@@ -1,4 +1,4 @@
-package com.example.fitnessapp.UI.createWorkoutPlan;
+package com.example.fitnessapp.UI.home;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -19,21 +19,21 @@ import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
 
 import java.util.List;
 
-public class CreateWorkoutPlanFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
-    private CreateWorkoutPlanViewModel mViewModel;
+    private HomeViewModel mViewModel;
     private TextView textView;
 
-    public static CreateWorkoutPlanFragment newInstance() {
-        return new CreateWorkoutPlanFragment();
+    public static HomeFragment newInstance() {
+        return new HomeFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        mViewModel = new ViewModelProvider(this).get(CreateWorkoutPlanViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_create_workout, container, false);
+        mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         textView = requireView().findViewById(R.id.APITextView);
         textView.setText(mViewModel.getExerciseAsLiveData().toString());
