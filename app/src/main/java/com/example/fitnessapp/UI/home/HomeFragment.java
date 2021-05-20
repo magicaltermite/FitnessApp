@@ -2,6 +2,7 @@ package com.example.fitnessapp.UI.home;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.fitnessapp.R;
@@ -31,6 +33,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView workoutRV;
     private WorkoutRVAdapter workoutRVAdapter;
 
+    private Button button;
+
     public static HomeFragment newInstance() {
         return new HomeFragment();
     }
@@ -41,6 +45,8 @@ public class HomeFragment extends Fragment {
 
             mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
             View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+            button = root.findViewById(R.id.sendToDiet);
 
             workoutRV = root.findViewById(R.id.workoutListRV);
             workoutRV.hasFixedSize();
@@ -54,6 +60,20 @@ public class HomeFragment extends Fragment {
                 public void onChanged(List<Result> exercises) {
                     workoutRVAdapter.setDataset((ArrayList<Result>) exercises);
                     workoutRV.setAdapter(workoutRVAdapter);
+                }
+            });
+
+            button.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    System.out.println("Before Transaction: Button in HomeFragment pressed");
+                    FragmentTransaction fragmentTransaction = getActivity()
+                            .getSupportFragmentManager().beginTransaction();
+                    HomeFragment fragment = new HomeFragment();
+                    fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
+                    fragmentTransaction.commit();
+                    System.out.println("After Transaction: Button in HomeFragment pressed");
                 }
             });
 
