@@ -8,6 +8,6 @@ import retrofit2.http.Path;
 
 public interface WgerAPI {
 
-    @GET("api/v2/exerciseinfo/?name={name}")
-    Call<Root> getExercise(@Path("name") String name);
+    @GET("api/v2/exerciseinfo/")
+    Call<Root> getExercises();
 }

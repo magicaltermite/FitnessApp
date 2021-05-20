@@ -20,8 +20,12 @@ public class HomeViewModel extends ViewModel {
         return workoutRepository.getExercisesAsLiveData();
     }
 
-    public void searchExercise(String name) {
-        workoutRepository.searchExercise(name);
+    public String getExercise() {
+        return workoutRepository.getExercise();
+    }
+
+    public void searchExercise() {
+        workoutRepository.getAllExercises();
     }
 
 

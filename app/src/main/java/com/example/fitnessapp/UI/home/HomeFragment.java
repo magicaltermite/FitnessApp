@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.UI.diet.DietFragment;
@@ -31,8 +32,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView workoutRV;
     private WorkoutRVAdapter workoutRVAdapter;
 
-    private Button button;
-    ArrayList<Result> exercises;
+
 
 
     @Override
@@ -42,8 +42,9 @@ public class HomeFragment extends Fragment {
             mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
             View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-            button = root.findViewById(R.id.sendToDiet);
 
+
+            mViewModel.searchExercise();
 
             workoutRV = root.findViewById(R.id.workoutListRV);
             workoutRV.hasFixedSize();
@@ -60,19 +61,7 @@ public class HomeFragment extends Fragment {
                 }
             });
 
-            button.setOnClickListener(new View.OnClickListener() {
 
-                @Override
-                public void onClick(View v) {
-                    System.out.println("Before Transaction: Button in HomeFragment pressed");
-                    FragmentTransaction fragmentTransaction = getActivity()
-                            .getSupportFragmentManager().beginTransaction();
-                    DietFragment fragment = new DietFragment();
-                    fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
-                    fragmentTransaction.commit();
-                    System.out.println("After Transaction: Button in HomeFragment pressed");
-                }
-            });
 
             return root;
 

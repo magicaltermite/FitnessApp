@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData;
 
 import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class WorkoutRepository {
@@ -21,17 +20,18 @@ public class WorkoutRepository {
         return instance;
     }
 
-    public ArrayList<Result> getExercises() {
-        return null;
-    }
 
     public LiveData<List<Result>> getExercisesAsLiveData() {
-        return workoutDAO.getSearchExerciseAsLiveData();
+        return workoutDAO.getExercisesAsLiveData();
     }
 
 
-    public void searchExercise(String name) {
-        workoutDAO.searchForExercise(name);
+    public void getAllExercises() {
+        workoutDAO.getAllExercises();
+    }
+
+    public String getExercise() {
+        return workoutDAO.getExercise();
     }
 
 
