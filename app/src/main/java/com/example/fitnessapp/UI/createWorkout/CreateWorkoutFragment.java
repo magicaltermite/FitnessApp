@@ -106,8 +106,8 @@ public class CreateWorkoutFragment extends Fragment implements Parcelable {
         addWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Workout workout = new Workout(workoutName.getText().toString(), exerciseArrayList);
-                workoutsList.add(workout);
+                //Workout workout = new Workout(workoutName.getText().toString(), exerciseArrayList);
+                //workoutsList.add(workout);
 
                 Gson gson = new Gson();
 
