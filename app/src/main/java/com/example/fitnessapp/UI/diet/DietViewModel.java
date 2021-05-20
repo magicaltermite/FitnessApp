@@ -1,4 +1,4 @@
-package com.example.fitnessapp.UI.createDiet;
+package com.example.fitnessapp.UI.diet;
 
 import androidx.lifecycle.ViewModel;
 

@@ -1,4 +1,4 @@
-package com.example.fitnessapp.UI.createDiet;
+package com.example.fitnessapp.UI.diet;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,7 +27,6 @@ public class DietFragment extends Fragment {
 
         dietViewModel = new ViewModelProvider(this).get(DietViewModel.class);
         View root = inflater.inflate(R.layout.fragment_diet, container, false);
-
 
         return root;
     }
