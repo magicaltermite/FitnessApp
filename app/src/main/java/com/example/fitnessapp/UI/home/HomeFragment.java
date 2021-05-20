@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.UI.diet.DietFragment;
 import com.example.fitnessapp.UI.home.rv.WorkoutRVAdapter;
 import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
 
@@ -66,7 +67,7 @@ public class HomeFragment extends Fragment {
                     System.out.println("Before Transaction: Button in HomeFragment pressed");
                     FragmentTransaction fragmentTransaction = getActivity()
                             .getSupportFragmentManager().beginTransaction();
-                    HomeFragment fragment = new HomeFragment();
+                    DietFragment fragment = new DietFragment();
                     fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
                     fragmentTransaction.commit();
                     System.out.println("After Transaction: Button in HomeFragment pressed");
