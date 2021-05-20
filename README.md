@@ -32,3 +32,8 @@ Den primære grund til at jeg valgte præcis denne idé, er at jeg personligt ge
   - Evnen til at dele information med andre brugere
   
   
+Update på projekt:
+Ingen af kravene er blevet opfyldt.
+
+Link til demonstration:
+https://youtu.be/FVSz5HmT270
