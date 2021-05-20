@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,25 +39,26 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+            mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+            View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        workoutRV = root.findViewById(R.id.workoutListRV);
-        workoutRV.hasFixedSize();
-        workoutRV.setLayoutManager(new LinearLayoutManager(getContext()));
+            workoutRV = root.findViewById(R.id.workoutListRV);
+            workoutRV.hasFixedSize();
+            workoutRV.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        workoutRVAdapter = new WorkoutRVAdapter();
-        workoutRV.setAdapter(workoutRVAdapter);
+            workoutRVAdapter = new WorkoutRVAdapter();
+            workoutRV.setAdapter(workoutRVAdapter);
 
-        mViewModel.getExerciseAsLiveData().observe(getViewLifecycleOwner(), new Observer<List<Result>>() {
-            @Override
-            public void onChanged(List<Result> exercises) {
-                workoutRVAdapter.setDataset((ArrayList<Result>) exercises);
-                workoutRV.setAdapter(workoutRVAdapter);
-            }
-        });
+            mViewModel.getExerciseAsLiveData().observe(getViewLifecycleOwner(), new Observer<List<Result>>() {
+                @Override
+                public void onChanged(List<Result> exercises) {
+                    workoutRVAdapter.setDataset((ArrayList<Result>) exercises);
+                    workoutRV.setAdapter(workoutRVAdapter);
+                }
+            });
 
-        return root;
+            return root;
+
     }
 
 

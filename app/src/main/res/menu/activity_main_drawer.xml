@@ -5,9 +5,16 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:icon="?attr/actionModeCutDrawable"
-            android:title="Diet">
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/btn_star"
+            android:title="Home" />
 
-        </item>
+
+        <item
+            android:id="@+id/nav_diet"
+            android:icon="?attr/actionModeCutDrawable"
+            android:title="Diet"/>
+
+
     </group>
 </menu>
