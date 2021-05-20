@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="UI.createWorkout.CreateWorkoutFragment">
 
     <EditText
         android:id="@+id/workoutName"
@@ -48,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/add_exercise_button" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/exerciseInWorkoutRV"
+        android:id="@+id/workouts_in_workout_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

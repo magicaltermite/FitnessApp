@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.UI.home.rv.WorkoutRVAdapter;
+import com.example.fitnessapp.models.SimpleExercise;
 import com.example.fitnessapp.models.Workout;
 
 import java.util.ArrayList;
@@ -18,10 +19,14 @@ import java.util.List;
 
 public class CreateWorkoutRVAdapter extends RecyclerView.Adapter<CreateWorkoutRVAdapter.ViewHolder> {
 
-    private List<Workout> workoutsList;
+    private List<SimpleExercise> exerciseList;
 
     public CreateWorkoutRVAdapter() {
-        workoutsList = new ArrayList<>();
+        exerciseList = new ArrayList<>();
+    }
+
+    public void setDataSet(ArrayList<SimpleExercise> exerciseArrayList) {
+        this.exerciseList = exerciseArrayList;
     }
 
     @NonNull
@@ -34,15 +39,15 @@ public class CreateWorkoutRVAdapter extends RecyclerView.Adapter<CreateWorkoutRV
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Workout workout = workoutsList.get(position);
-        workout.setName(holder.workoutName.getText().toString());
+        SimpleExercise exercise = exerciseList.get(position);
+        exercise.setName(holder.workoutName.getText().toString());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return workoutsList.size();
+        return exerciseList.size();
     }
 
 
@@ -55,7 +60,7 @@ public class CreateWorkoutRVAdapter extends RecyclerView.Adapter<CreateWorkoutRV
             super(itemView);
 
             workoutName = itemView.findViewById(R.id.workoutName);
-            workoutMuscle = itemView.findViewById(R.id.workoutMuscle);
+
             addExerciseButton = itemView.findViewById(R.id.add_exercise_button);
         }
     }

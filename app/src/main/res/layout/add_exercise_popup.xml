@@ -17,7 +17,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="72dp"
 
-        app:cardBackgroundColor="@color/card">
+        app:cardBackgroundColor="@color/mainRed">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2E2C2B">
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/exerciseCard"
@@ -13,7 +13,7 @@
         android:layout_height="171dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="16dp"
-        app:cardBackgroundColor="#D35454"
+        app:cardBackgroundColor="@color/mainRed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:cardCornerRadius="30dp">
@@ -23,6 +23,8 @@
 
             <TextView
                 android:id="@+id/day"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -33,21 +35,25 @@
 
             <TextView
                 android:id="@+id/muscleGroup"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="56dp"
-                android:text="descirption"
+                android:text="description"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/numOfExercises"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="68dp"
-                android:text="muscle1"
+                android:text="muscles"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/day" />
 

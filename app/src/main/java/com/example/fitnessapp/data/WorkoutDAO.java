@@ -7,14 +7,25 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.fitnessapp.models.SimpleExercise;
+import com.example.fitnessapp.models.Workout;
 import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
 import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Root;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -25,9 +36,13 @@ public class WorkoutDAO {
 
     private static WorkoutDAO instance;
     private final MutableLiveData<List<Result>> exerciseList;
+    private MutableLiveData<List<SimpleExercise>> exercisesForWorkoutList;
+    private List<Workout> workoutsList;
 
     private WorkoutDAO() {
         exerciseList = new MutableLiveData<>();
+        exercisesForWorkoutList = new MutableLiveData<>();
+        workoutsList = new ArrayList<>();
     }
 
     public static WorkoutDAO getInstance() {
@@ -64,8 +79,28 @@ public class WorkoutDAO {
 
     }
 
-    public void getAllSavedWorkouts() {
 
+
+    public List<Workout> getAllSavedWorkouts(Context context) {
+        String fileInfo = null;
+        try {
+            FileInputStream fis = context.openFileInput("workoutSaveFiles.txt");
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader bufferedReader = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            while ((fileInfo = bufferedReader.readLine()) != null) {
+                sb.append(fileInfo);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Workout>>() {}.getType();
+
+        workoutsList = gson.fromJson(fileInfo, listType);
+
+        return workoutsList;
     }
 
 
@@ -88,10 +123,9 @@ public class WorkoutDAO {
         }
     }
 
-    public String getExercise() {
-        List<Result> results = exerciseList.getValue();
-
-        return "results.get(0).getName();";
+    public LiveData<List<SimpleExercise>> getAllSavedExercises(int i) {
+        exercisesForWorkoutList.setValue(workoutsList.get(i).getExercises());
+        return exercisesForWorkoutList;
     }
 
 

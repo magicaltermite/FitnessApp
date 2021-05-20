@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.fitnessapp.data.WorkoutRepository;
+import com.example.fitnessapp.models.Workout;
 import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
 
 import java.util.List;
@@ -21,9 +22,11 @@ public class HomeViewModel extends ViewModel {
     }
 
 
-    public void getSavedExercises() {
-        workoutRepository.getAllExercises();
+    public List<Workout> getAllSavedWorkouts() {
+        return workoutRepository.getSavedWorkouts();
     }
+
+
 
 
 

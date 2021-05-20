@@ -14,6 +14,10 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/DietFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_createWorkoutFragment2"
+            app:destination="@id/CreateWorkoutFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/DietFragment"
@@ -25,4 +29,11 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/HomeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/CreateWorkoutFragment"
+        android:name="com.example.fitnessapp.UI.createWorkout.CreateWorkoutFragment"
+        android:label="CreateWorkoutFragment"
+        tools:layout="@layout/fragment_create_workout"/>
+
+
 </navigation>
