@@ -38,9 +38,8 @@ public class WorkoutRVAdapter extends RecyclerView.Adapter<WorkoutRVAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Result exercise = exercisesArrayList.get(position);
-        holder.exerciseName.setText(exercise.getName());
-        holder.exerciseDescription.setText(exercise.getDescription());
-
+        holder.dayOfWeek.setText(exercise.getName());
+        holder.muscleGroup.setText(exercise.getDescription());
 
     }
 
@@ -52,15 +51,14 @@ public class WorkoutRVAdapter extends RecyclerView.Adapter<WorkoutRVAdapter.View
 
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView exerciseName, exerciseDescription, muscle1, muscle2;
+        TextView dayOfWeek, muscleGroup, numOfExercises;
 
         ViewHolder(View itemView) {
             super(itemView);
 
-            exerciseName = itemView.findViewById(R.id.exerciseName);
-            exerciseDescription = itemView.findViewById(R.id.exerciseDescription);
-            muscle1 = itemView.findViewById(R.id.muscle1);
-            muscle2 = itemView.findViewById(R.id.muscle2);
+            dayOfWeek = itemView.findViewById(R.id.day);
+            muscleGroup = itemView.findViewById(R.id.muscleGroup);
+            numOfExercises = itemView.findViewById(R.id.numOfExercises);
         }
     }
 

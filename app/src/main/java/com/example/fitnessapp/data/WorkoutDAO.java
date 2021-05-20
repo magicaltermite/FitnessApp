@@ -1,6 +1,7 @@
 package com.example.fitnessapp.data;
 
 
+import android.content.Context;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
@@ -11,6 +12,9 @@ import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Root;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -38,7 +42,7 @@ public class WorkoutDAO {
         return exerciseList;
     }
 
-    public void getAllExercises() {
+    public void getAllExercisesFromAPI() {
         WgerAPI wgerAPI = ServiceGenerator.getWgerApi();
 
         Call<Root> call = wgerAPI.getExercises();
@@ -58,6 +62,30 @@ public class WorkoutDAO {
         });
 
 
+    }
+
+    public void getAllSavedWorkouts() {
+
+    }
+
+
+    public void saveWorkoutsToInternal(Context mcoContext, String sFileName, String sBody) {
+        File savedWorkoutsDir = new File(mcoContext.getFilesDir(), "workoutDir");
+
+        if(!savedWorkoutsDir.exists()) {
+            savedWorkoutsDir.mkdir();
+        }
+
+        try {
+            File gpxFile = new File(savedWorkoutsDir, sFileName);
+            FileWriter writer = new FileWriter(gpxFile);
+            writer.append(sBody);
+            writer.flush();
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getExercise() {

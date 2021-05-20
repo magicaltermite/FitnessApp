@@ -2,7 +2,6 @@ package com.example.fitnessapp.UI.home;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -15,11 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.UI.diet.DietFragment;
 import com.example.fitnessapp.UI.home.rv.WorkoutRVAdapter;
 import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
 
@@ -44,7 +40,7 @@ public class HomeFragment extends Fragment {
 
 
 
-            mViewModel.searchExercise();
+            mViewModel.getSavedExercises();
 
             workoutRV = root.findViewById(R.id.workoutListRV);
             workoutRV.hasFixedSize();

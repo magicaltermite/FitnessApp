@@ -27,7 +27,7 @@ public class WorkoutRepository {
 
 
     public void getAllExercises() {
-        workoutDAO.getAllExercises();
+        workoutDAO.getAllExercisesFromAPI();
     }
 
     public String getExercise() {
