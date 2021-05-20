@@ -9,6 +9,10 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
 import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Root;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import retrofit2.Call;
@@ -20,9 +24,11 @@ public class WorkoutDAO {
 
     private static WorkoutDAO instance;
     private final MutableLiveData<List<Result>> searchExercise;
+    private List<Result> exercisesList;
 
     private WorkoutDAO() {
         searchExercise = new MutableLiveData<>();
+        exercisesList = new ArrayList<>();
     }
 
     public static WorkoutDAO getInstance() {
@@ -31,7 +37,12 @@ public class WorkoutDAO {
         return instance;
     }
 
-    public LiveData<List<Result>> getSearchExercise() {
+    public ArrayList<Result> getExercises() {
+        exercisesList.addAll((Collection<? extends Result>) searchExercise);
+        return null;
+    }
+
+    public LiveData<List<Result>> getSearchExerciseAsLiveData() {
         return searchExercise;
     }
 
@@ -42,14 +53,14 @@ public class WorkoutDAO {
         call.enqueue(new Callback<Root>() {
 
             @Override
-            public void onResponse(Call<Root> call, Response<Root> response) {
+            public void onResponse(@NotNull Call<Root> call, @NotNull Response<Root> response) {
                 if (response.code() == 200) {
                     searchExercise.setValue(response.body().getResults());
                 }
             }
 
             @Override
-            public void onFailure(Call<Root> call, Throwable t) {
+            public void onFailure(@NotNull Call<Root> call, @NotNull Throwable t) {
                 Log.i("retrofit, WorkoutDAO", "Something went wrong: (");
             }
         });

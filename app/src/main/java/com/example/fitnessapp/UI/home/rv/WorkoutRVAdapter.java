@@ -13,15 +13,17 @@ import com.example.fitnessapp.R;
 import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class WorkoutRVAdapter extends RecyclerView.Adapter<WorkoutRVAdapter.ViewHolder> {
 
-    private ArrayList<Result> exercisesArrayList;
+    private List<Result> exercisesArrayList;
 
     public WorkoutRVAdapter() {
+        exercisesArrayList = new ArrayList<>();
     }
 
-    public void setDataset(ArrayList<Result> exercisesArrayList) {
+    public void setDataSet(ArrayList<Result> exercisesArrayList) {
         this.exercisesArrayList = exercisesArrayList;
     }
 
@@ -40,13 +42,12 @@ public class WorkoutRVAdapter extends RecyclerView.Adapter<WorkoutRVAdapter.View
         holder.exerciseDescription.setText(exercise.getDescription());
 
 
-
     }
 
     @Override
     public int getItemCount() {
-        //return exercisesArrayList.size();
-        return 0;
+        return exercisesArrayList.size();
+
     }
 
 

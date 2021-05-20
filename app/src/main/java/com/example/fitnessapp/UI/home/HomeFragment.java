@@ -6,19 +6,16 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.UI.home.rv.WorkoutRVAdapter;
@@ -34,10 +31,8 @@ public class HomeFragment extends Fragment {
     private WorkoutRVAdapter workoutRVAdapter;
 
     private Button button;
+    ArrayList<Result> exercises;
 
-    public static HomeFragment newInstance() {
-        return new HomeFragment();
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -47,6 +42,7 @@ public class HomeFragment extends Fragment {
             View root = inflater.inflate(R.layout.fragment_home, container, false);
 
             button = root.findViewById(R.id.sendToDiet);
+
 
             workoutRV = root.findViewById(R.id.workoutListRV);
             workoutRV.hasFixedSize();
@@ -58,7 +54,7 @@ public class HomeFragment extends Fragment {
             mViewModel.getExerciseAsLiveData().observe(getViewLifecycleOwner(), new Observer<List<Result>>() {
                 @Override
                 public void onChanged(List<Result> exercises) {
-                    workoutRVAdapter.setDataset((ArrayList<Result>) exercises);
+                    workoutRVAdapter.setDataSet((ArrayList<Result>) exercises);
                     workoutRV.setAdapter(workoutRVAdapter);
                 }
             });

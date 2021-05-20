@@ -1,5 +1,7 @@
 package com.example.fitnessapp.models.wgerAPI.exerciseInfo;
 
+import android.graphics.Region;
+
 import java.util.List;
 
 public class Result {
@@ -20,6 +22,10 @@ public class Result {
     public List<Integer> variations;
 
 
+
+
+
+    //region gettersSetters
 
     public int getId() {
         return id;
@@ -140,4 +146,6 @@ public class Result {
     public void setVariations(List<Integer> variations) {
         this.variations = variations;
     }
+
+    //endregion
 }

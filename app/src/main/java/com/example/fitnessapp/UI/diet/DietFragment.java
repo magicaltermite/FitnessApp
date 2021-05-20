@@ -16,9 +16,7 @@ public class DietFragment extends Fragment {
 
     private DietViewModel dietViewModel;
 
-    public static DietFragment newInstance() {
-        return new DietFragment();
-    }
+
 
     @Nullable
     @Override

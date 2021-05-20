@@ -17,7 +17,7 @@ public class HomeViewModel extends ViewModel {
     }
 
     public LiveData<List<Result>> getExerciseAsLiveData() {
-        return workoutRepository.getExercise();
+        return workoutRepository.getExercisesAsLiveData();
     }
 
     public void searchExercise(String name) {
