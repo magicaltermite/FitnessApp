@@ -19,6 +19,7 @@ import android.view.View;
 
 import com.example.fitnessapp.UI.createWorkout.CreateWorkoutFragment;
 import com.example.fitnessapp.UI.home.HomeFragment;
+import com.example.fitnessapp.models.MyApplication;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
+        MyApplication.setContext(this);
 
     }
 

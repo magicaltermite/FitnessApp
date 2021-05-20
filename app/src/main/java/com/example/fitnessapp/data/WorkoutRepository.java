@@ -14,10 +14,8 @@ import java.util.List;
 public class WorkoutRepository {
     private static WorkoutRepository instance;
     private WorkoutDAO workoutDAO;
-    private Context context;
 
     private WorkoutRepository() {
-        context = MyApplication.getAppContext();
         workoutDAO = WorkoutDAO.getInstance();
     }
 
@@ -34,11 +32,17 @@ public class WorkoutRepository {
 
 
     public LiveData<List<SimpleExercise>> getAllExercises(int i) {
-        return workoutDAO.getAllSavedExercises(context, i);
+        return workoutDAO.getAllSavedExercises(i);
     }
 
-    public List<Workout> getSavedWorkouts() {
+    public List<Workout> getSavedWorkouts(Context context) {
         return workoutDAO.getAllSavedWorkouts(context);
     }
+
+    public void saveWorkoutToFile(Workout workout, Context context) {
+        workoutDAO.saveWorkoutsToInternal(context, "D:\\Android Studio Files\\FitnessApp\\FitnessApp\\app\\src\\main\\java\\com\\example\\fitnessapp\\saveFiles\\workoutsSaveFile", workout);
+    }
+
+
 
 }

@@ -2,6 +2,7 @@ package com.example.fitnessapp.data;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
@@ -38,6 +39,7 @@ public class WorkoutDAO {
     private final MutableLiveData<List<Result>> exerciseList;
     private MutableLiveData<List<SimpleExercise>> exercisesForWorkoutList;
     private List<Workout> workoutsList;
+    private SharedPreferences preferences;
 
     private WorkoutDAO() {
         exerciseList = new MutableLiveData<>();
@@ -84,7 +86,7 @@ public class WorkoutDAO {
     public List<Workout> getAllSavedWorkouts(Context context) {
         String fileInfo = null;
         try {
-            FileInputStream fis = context.openFileInput("workoutSaveFiles.txt");
+            FileInputStream fis = context.openFileInput("FitnessApp\\app\\src\\main\\java\\com\\example\\fitnessapp\\saveFilesworkoutSaveFiles.txt");
             InputStreamReader isr = new InputStreamReader(fis);
             BufferedReader bufferedReader = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();
@@ -97,14 +99,16 @@ public class WorkoutDAO {
 
         Gson gson = new Gson();
         Type listType = new TypeToken<List<Workout>>() {}.getType();
-
         workoutsList = gson.fromJson(fileInfo, listType);
 
         return workoutsList;
     }
 
 
-    public void saveWorkoutsToInternal(Context mcoContext, String sFileName, String sBody) {
+    public void saveWorkoutsToInternal(Context mcoContext, String sFileName, Workout workout) {
+        Gson gson = new Gson();
+        String sBody = gson.toJson(workout);
+
         File savedWorkoutsDir = new File(mcoContext.getFilesDir(), "workoutDir");
 
         if(!savedWorkoutsDir.exists()) {
@@ -124,8 +128,11 @@ public class WorkoutDAO {
     }
 
     public LiveData<List<SimpleExercise>> getAllSavedExercises(int i) {
-        exercisesForWorkoutList.setValue(workoutsList.get(i).getExercises());
-        return exercisesForWorkoutList;
+        if (workoutsList.size() >= 1) {
+            exercisesForWorkoutList.setValue(workoutsList.get(i).getExercises());
+            return exercisesForWorkoutList;
+        }
+        return null;
     }
 
 

@@ -10,21 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.models.wgerAPI.exerciseInfo.Result;
+import com.example.fitnessapp.models.Workout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class WorkoutRVAdapter extends RecyclerView.Adapter<WorkoutRVAdapter.ViewHolder> {
 
-    private List<Result> exercisesArrayList;
+    private List<Workout> workoutsList;
 
     public WorkoutRVAdapter() {
-        exercisesArrayList = new ArrayList<>();
+        workoutsList = new ArrayList<>();
     }
 
-    public void setDataSet(ArrayList<Result> exercisesArrayList) {
-        this.exercisesArrayList = exercisesArrayList;
+    public void setDataSet(ArrayList<Workout> exercisesArrayList) {
+        this.workoutsList = exercisesArrayList;
     }
 
     @NonNull
@@ -37,15 +37,14 @@ public class WorkoutRVAdapter extends RecyclerView.Adapter<WorkoutRVAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Result exercise = exercisesArrayList.get(position);
-        holder.dayOfWeek.setText(exercise.getName());
-        holder.muscleGroup.setText(exercise.getDescription());
+        Workout workout = workoutsList.get(position);
+        holder.dayOfWeek.setText(workout.getName());
 
     }
 
     @Override
     public int getItemCount() {
-        return exercisesArrayList.size();
+        return workoutsList.size();
 
     }
 
