@@ -11,14 +11,14 @@ import com.example.fitnessapp.models.wgerAPI.exerciseInfo.MusclesSecondary;
 
 import java.util.List;
 
-public class SimpleWorkout {
+public class SimpleExercise {
 
     public String name;
     public String description;
     public List<Muscle> muscles;
     public List<Equipment> equipment;
 
-    public SimpleWorkout(String name, String description, List<Muscle> muscles, List<MusclesSecondary> muscles_secondary, List<Equipment> equipment) {
+    public SimpleExercise(String name, String description, List<Muscle> muscles, List<MusclesSecondary> muscles_secondary, List<Equipment> equipment) {
         this.name = name;
         this.description = description;
         this.muscles = muscles;
